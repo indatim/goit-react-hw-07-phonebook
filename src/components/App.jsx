@@ -1,7 +1,7 @@
 import { Container, PhonebookHeader, ContactsHeader } from './App.styled';
 
 import { FaPhoneSquareAlt, FaUser } from "react-icons/fa";
-import { Loader } from './Loader/Loader';
+// import { Loader } from './Loader/Loader';
 
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
