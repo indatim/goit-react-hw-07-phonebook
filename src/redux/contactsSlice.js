@@ -6,7 +6,7 @@ import { handlePending, handleFulfieldAddContact, handleFulfieldDeleteContact, h
 import { fetchContacts, addContact, deleteContact } from './operations';
 
 const arrOfThunks = [fetchContacts, addContact, deleteContact, ];
-const fn = type => arrOfThunks.map(el => el[type]);
+const func = type => arrOfThunks.map(el => el[type]);
 
 const contactsSlice = createSlice({
   name: 'contacts',
@@ -16,8 +16,8 @@ const contactsSlice = createSlice({
       .addCase(fetchContacts.fulfilled, handleFulfieldFetchContacts)
       .addCase(addContact.fulfilled, handleFulfieldAddContact)
       .addCase(deleteContact.fulfilled, handleFulfieldDeleteContact)
-      .addMatcher(isAnyOf(...fn('pending')), handlePending)
-      .addMatcher(isAnyOf(...fn('rejected')), handleRejected)
+      .addMatcher(isAnyOf(...func('pending')), handlePending)
+      .addMatcher(isAnyOf(...func('rejected')), handleRejected)
   },
 })
 
